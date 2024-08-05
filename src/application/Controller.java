@@ -1,7 +1,9 @@
 package application;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -45,6 +47,15 @@ public class Controller {
 	/*
 	 * end of title bar buttons
 	 */
+	
+	@FXML
+	private Label resultLabel;
+	
+	@FXML
+	private void clickNumberSeven(ActionEvent event){
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "7");
+	}
 	
 	
 	
