@@ -48,6 +48,14 @@ public class Controller {
 	 * end of title bar buttons
 	 */
 	
+	
+	
+	/*
+	 * gala code
+	 */
+	
+	
+	
 	@FXML
 	private Label resultLabel;
 	
@@ -57,6 +65,11 @@ public class Controller {
 		resultLabel.setText(text + "7");
 	}
 	
+	
+	
+	/*
+	 * finish gala code
+	 */
 	
 	
 }

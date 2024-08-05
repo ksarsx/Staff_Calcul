@@ -9,8 +9,10 @@
 #btnClose {
 	-fx-background-color: white;
 }
-
 #btnClose:hover {
 	-fx-background-color: red;
+}
+#resultLabel{
+	-fx-background-color: lightgrey;
 }
 
