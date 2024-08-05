@@ -3,8 +3,14 @@
 #ctr1 {
 	-fx-background-color: red;
 }
-
 #titleBar {
 	-fx-background-color: #FFF6B7;
+}
+#btnClose {
+	-fx-background-color: white;
+}
+
+#btnClose:hover {
+	-fx-background-color: red;
 }
 
