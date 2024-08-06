@@ -12,6 +12,18 @@
 #btnClose:hover {
 	-fx-background-color: red;
 }
+#btnFull{
+	-fx-background-color: white;
+}
+#btnFull:hover {
+	-fx-background-color: lightgrey;
+}
+#btnHide{
+	-fx-background-color: white;
+}
+#btnHide:hover{
+	-fx-background-color: lightgrey;
+}
 #resultLabel{
 	-fx-background-color: lightgrey;
 }

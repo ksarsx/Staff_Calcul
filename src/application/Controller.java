@@ -9,18 +9,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Controller {
-	
-	
-	/*
-	 * title bar
-	 */
-	
-	@FXML
-	private Pane titleBar;
-	
-	private double xOffset = 0;
-	private double yOffset = 0;
-	
 	/*
 	 * title bar buttons
 	 */
@@ -37,16 +25,44 @@ public class Controller {
 	
 	@FXML
 	private void onBtnFullReleased(MouseEvent event) {
-		
+		System.out.println("k1");
 	}
 	
 	@FXML
 	private void onBtnHideReleased(MouseEvent event) {
+		System.out.println("k2");
+		Node source = (Node) event.getSource();
+		Stage stage = (Stage) source.getScene().getWindow();
+		stage.setIconified(true);
 		
 	}
 	/*
 	 * end of title bar buttons
 	 */
+	
+	
+	
+	/*
+	 * title bar drag borders settings
+	 */
+	
+	@FXML
+	private Pane titleBar;
+	
+	private double xOffset = 0;
+	private double yOffset = 0;
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 * end of title bar
+	 */
+	
+	
 	
 	
 	

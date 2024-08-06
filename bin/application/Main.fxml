@@ -25,12 +25,12 @@
             <Pane fx:id="titleBar" HBox.hgrow="ALWAYS" />
             <HBox prefHeight="25.0" prefWidth="139.0">
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                  <StackPane fx:id="btnHide" onMouseReleased="#onBtnHideReleased" prefHeight="150.0" prefWidth="200.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="―" />
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                  <StackPane fx:id="btnFull" onMouseReleased="#onBtnFullReleased" prefHeight="150.0" prefWidth="200.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I" />
                      </children>
