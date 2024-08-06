@@ -1,8 +1,5 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
-#ctr1 {
-	-fx-background-color: red;
-}
 #titleBar {
 	-fx-background-color: #FFF6B7;
 }
@@ -27,4 +24,33 @@
 #resultLabel{
 	-fx-background-color: lightgrey;
 }
-
+#border1:hover{
+	-fx-cursor: nw-resize;
+}
+#border2:hover{
+	-fx-cursor: n-resize;
+}
+#border3:hover{
+	-fx-cursor: ne-resize;
+}
+#border4:hover{
+	-fx-cursor: w-resize;
+}
+#border5:hover{
+	-fx-cursor: e-resize;
+}
+#border6:hover{
+	-fx-cursor: w-resize;
+}
+#border7:hover{
+	-fx-cursor: e-resize;
+}
+#border8:hover{
+	-fx-cursor: sw-resize;
+}
+#border9:hover{
+	-fx-cursor: s-resize;
+}
+#border10:hover{
+	-fx-cursor: se-resize;
+}

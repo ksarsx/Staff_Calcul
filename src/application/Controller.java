@@ -1,8 +1,10 @@
 package application;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -43,7 +45,7 @@ public class Controller {
 	
 	
 	/*
-	 * title bar drag borders settings
+	 * title bar drag label settings
 	 */
 	
 	@FXML
@@ -52,14 +54,59 @@ public class Controller {
 	private double xOffset = 0;
 	private double yOffset = 0;
 	
+	@FXML
+	private void onMouseEnteredToTitleBar(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				xOffset = event.getSceneX();
+				yOffset = event.getSceneY();
+			}
+		});
+		
+		parent.setOnMousePressed(null);
+	}
 	
+	@FXML
+	public void onMousePressedToTitle(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				xOffset = event.getSceneX();
+				yOffset = event.getSceneY();
+			}
+		});
+		
+		parent.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				stage.setX(event.getScreenX() - xOffset);
+				stage.setY(event.getScreenY() - yOffset);
+			}
+		});
+	}
 	
-	
+	@FXML
+	public void onMouseReleasedFromTitle(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+			
+		parent.setOnMousePressed(null);
+		parent.setOnMouseDragged(null);
+	}
 	
 	
 	
 	/*
-	 * end of title bar
+	 * end of title bar drag label
 	 */
 	
 	

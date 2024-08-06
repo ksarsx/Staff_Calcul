@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -14,15 +16,15 @@
    <children>
       <HBox prefHeight="5.0">
          <children>
-            <Pane prefHeight="5.0" prefWidth="10.0" />
-            <Pane fx:id="ctr1" prefHeight="5.0" HBox.hgrow="ALWAYS" />
-            <Pane prefHeight="5.0" prefWidth="10.0" />
+            <Pane fx:id="border1" prefHeight="5.0" prefWidth="10.0" />
+            <Pane fx:id="border2" prefHeight="5.0" HBox.hgrow="ALWAYS" />
+            <Pane fx:id="border3" prefHeight="5.0" prefWidth="10.0" />
          </children>
       </HBox>
       <HBox prefHeight="25.0">
          <children>
-            <Pane prefWidth="5.0" />
-            <Pane fx:id="titleBar" HBox.hgrow="ALWAYS" />
+            <Pane fx:id="border4" prefWidth="5.0" />
+            <Pane fx:id="titleBar" onMouseEntered="#onMouseEnteredToTitleBar" onMousePressed="#onMousePressedToTitle" onMouseReleased="#onMouseReleasedFromTitle" HBox.hgrow="ALWAYS" />
             <HBox prefHeight="25.0" prefWidth="139.0">
                <children>
                   <StackPane fx:id="btnHide" onMouseReleased="#onBtnHideReleased" prefHeight="150.0" prefWidth="200.0">
@@ -32,7 +34,11 @@
                   </StackPane>
                   <StackPane fx:id="btnFull" onMouseReleased="#onBtnFullReleased" prefHeight="150.0" prefWidth="200.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I" />
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@fscreen.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </StackPane>
                   <StackPane fx:id="btnClose" onMouseReleased="#onBtnCloseReleased" prefHeight="150.0" prefWidth="200.0">
@@ -42,12 +48,12 @@
                   </StackPane>
                </children>
             </HBox>
-            <Pane prefWidth="5.0" />
+            <Pane fx:id="border5" prefWidth="5.0" />
          </children>
       </HBox>
       <HBox VBox.Vgrow="ALWAYS">
          <children>
-            <Pane prefWidth="5.0" />
+            <Pane fx:id="border6" prefWidth="5.0" />
             <VBox HBox.Hgrow="ALWAYS">
                <children>
                   <Label fx:id="resultLabel" alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="347.0" />
@@ -77,14 +83,14 @@
                         <Button fx:id="removeButton" layoutX="262.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickRemoveButton" prefHeight="26.0" prefWidth="38.0" text="CE" textFill="#6633ff" />
                      </children></AnchorPane>
                </children></VBox>
-            <Pane prefWidth="5.0" />
+            <Pane fx:id="border7" prefWidth="5.0" />
          </children>
       </HBox>
       <HBox prefHeight="5.0">
          <children>
-            <Pane prefHeight="5.0" prefWidth="10.0" />
-            <Pane HBox.Hgrow="ALWAYS" />
-            <Pane prefHeight="5" prefWidth="10.0" />
+            <Pane fx:id="border8" prefHeight="5.0" prefWidth="10.0" />
+            <Pane fx:id="border9" HBox.Hgrow="ALWAYS" />
+            <Pane fx:id="border10" prefHeight="5" prefWidth="10.0" />
          </children>
       </HBox>
    </children>
