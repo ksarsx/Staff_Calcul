@@ -47,7 +47,6 @@ public class Controller {
 	/*
 	 * title bar drag label settings
 	 */
-	
 	@FXML
 	private Pane titleBar;
 	
@@ -102,14 +101,103 @@ public class Controller {
 		parent.setOnMousePressed(null);
 		parent.setOnMouseDragged(null);
 	}
-	
-	
-	
 	/*
 	 * end of title bar drag label
 	 */
 	
 	
+	
+	/*
+	 * drag borders 
+	 */
+	
+	@FXML
+	private void onBorderReleased(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		
+		parent.setOnMousePressed(null);
+		parent.setOnMouseDragged(null);
+	}
+	
+	private double Y = 0;
+	private double deltaY = 0;
+	private double X = 0;
+	private double deltaX = 0;
+	
+	private double getWidth(Stage stage) {
+		return stage.getWidth();
+	}
+	private double getHeight(Stage stage) {
+		return stage.getHeight();
+	}
+	
+	@FXML
+	private void onBorderTopLeftPressed(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				Y = event.getSceneY();
+				X = event.getSceneX();
+			}
+		});
+		
+		parent.setOnMouseDragged(new EventHandler<MouseEvent> () {
+			@Override 
+			public void handle(MouseEvent event) {
+				deltaY = (stage.getY() - (event.getScreenY() - Y));
+				deltaX = (stage.getX() - (event.getScreenX() - X));
+				if ((getHeight(stage) + deltaY >= 600)) {
+					
+					System.out.println(deltaX);
+					stage.setHeight(stage.getHeight() + deltaY);
+					
+					stage.setY(stage.getY() - deltaY);
+					
+					//System.out.println(newHeight + "new Height");
+				}
+				if (getWidth(stage) + deltaX >= 360) {
+					stage.setWidth(stage.getWidth() + deltaX);
+					stage.setX(stage.getX() - deltaX);
+				}
+			}
+		});
+	}
+	
+	@FXML
+	private void onBorderTopPressed(MouseEvent event) {}
+	
+	@FXML 
+	private void onBorderTopRightPressed(MouseEvent event) {}
+	
+	@FXML 
+	private void onBorderLeftPressed(MouseEvent event) {}
+	
+	@FXML
+	private void onBorderRightPressed(MouseEvent event) {}
+	
+	@FXML
+	private void onBorderBottomLeftPressed(MouseEvent event) {}
+	
+	@FXML
+	private void onBorderBottomPressed(MouseEvent event) {}
+	
+	@FXML
+	private void onBorderBottomRightPressed(MouseEvent event) {}
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 * finish of drag borders
+	 */
 	
 	
 	

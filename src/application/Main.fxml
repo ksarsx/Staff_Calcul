@@ -16,14 +16,14 @@
    <children>
       <HBox prefHeight="5.0">
          <children>
-            <Pane fx:id="border1" prefHeight="5.0" prefWidth="10.0" />
-            <Pane fx:id="border2" prefHeight="5.0" HBox.hgrow="ALWAYS" />
-            <Pane fx:id="border3" prefHeight="5.0" prefWidth="10.0" />
+            <Pane fx:id="border1" onMousePressed="#onBorderTopLeftPressed" onMouseReleased="#onBorderReleased" prefHeight="5.0" prefWidth="10.0" />
+            <Pane fx:id="border2" onMousePressed="#onBorderTopPressed" onMouseReleased="#onBorderReleased" prefHeight="5.0" HBox.hgrow="ALWAYS" />
+            <Pane fx:id="border3" onMousePressed="#onBorderTopRightPressed" onMouseReleased="#onBorderReleased" prefHeight="5.0" prefWidth="10.0" />
          </children>
       </HBox>
       <HBox prefHeight="25.0">
          <children>
-            <Pane fx:id="border4" prefWidth="5.0" />
+            <Pane fx:id="border4" onMousePressed="#onBorderLeftPressed" onMouseReleased="#onBorderReleased" prefWidth="5.0" />
             <Pane fx:id="titleBar" onMouseEntered="#onMouseEnteredToTitleBar" onMousePressed="#onMousePressedToTitle" onMouseReleased="#onMouseReleasedFromTitle" HBox.hgrow="ALWAYS" />
             <HBox prefHeight="25.0" prefWidth="139.0">
                <children>
@@ -48,12 +48,12 @@
                   </StackPane>
                </children>
             </HBox>
-            <Pane fx:id="border5" prefWidth="5.0" />
+            <Pane fx:id="border5" onMousePressed="#onBorderRightPressed" onMouseReleased="#onBorderReleased" prefWidth="5.0" />
          </children>
       </HBox>
       <HBox VBox.Vgrow="ALWAYS">
          <children>
-            <Pane fx:id="border6" prefWidth="5.0" />
+            <Pane fx:id="border6" onMousePressed="#onBorderLeftPressed" onMouseReleased="#onBorderReleased" prefWidth="5.0" />
             <VBox HBox.Hgrow="ALWAYS">
                <children>
                   <Label fx:id="resultLabel" alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="347.0" />
@@ -83,14 +83,14 @@
                         <Button fx:id="removeButton" layoutX="262.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickRemoveButton" prefHeight="26.0" prefWidth="38.0" text="CE" textFill="#6633ff" />
                      </children></AnchorPane>
                </children></VBox>
-            <Pane fx:id="border7" prefWidth="5.0" />
+            <Pane fx:id="border7" onMousePressed="#onBorderRightPressed" onMouseReleased="#onBorderReleased" prefWidth="5.0" />
          </children>
       </HBox>
       <HBox prefHeight="5.0">
          <children>
-            <Pane fx:id="border8" prefHeight="5.0" prefWidth="10.0" />
-            <Pane fx:id="border9" HBox.Hgrow="ALWAYS" />
-            <Pane fx:id="border10" prefHeight="5" prefWidth="10.0" />
+            <Pane fx:id="border8" onMousePressed="#onBorderBottomLeftPressed" onMouseReleased="#onBorderReleased" prefHeight="5.0" prefWidth="10.0" />
+            <Pane fx:id="border9" onMousePressed="#onBorderBottomPressed" onMouseReleased="#onBorderReleased" HBox.Hgrow="ALWAYS" />
+            <Pane fx:id="border10" onMousePressed="#onBorderBottomRightPressed" onMouseReleased="#onBorderReleased" prefHeight="5" prefWidth="10.0" />
          </children>
       </HBox>
    </children>
