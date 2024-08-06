@@ -65,6 +65,72 @@ public class Controller {
 		resultLabel.setText(text + "7");
 	}
 	
+	@FXML
+	private void clickNumberEight(ActionEvent event){
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "8");
+	}
+	
+	@FXML
+	private void clickNumberNine(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "9");
+	}
+	
+	@FXML
+	private void clickNumberSix(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "6");
+	}
+	
+	@FXML
+	private void clickNumberThree(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "3");
+	}
+	
+	@FXML
+	private void clickNumberFour(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "4");
+	}
+	
+	@FXML
+	private void clickNumberFive(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "5");
+	}
+	
+	@FXML
+	private void clickNumberTwo(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "2");
+	}
+	
+	@FXML
+	private void clickNumberOne(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "1");
+	}
+	
+	@FXML
+	private void clickNumberNull(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "0");
+	}
+	@FXML
+	private void clickDot(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + ".");
+	}
+	
+	@FXML
+	private void clickRemoveButton(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText("");
+	}
+	
+	
 	
 	
 	/*

@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
@@ -49,10 +50,31 @@
             <Pane prefWidth="5.0" />
             <VBox HBox.Hgrow="ALWAYS">
                <children>
-                  <Label fx:id="resultLabel" alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="347.0" text="result" />
+                  <Label fx:id="resultLabel" alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="347.0" />
                   <AnchorPane VBox.Vgrow="ALWAYS">
                      <children>
-                        <Button fx:id="number7" layoutX="28.0" layoutY="74.0" mnemonicParsing="false" onAction="#clickNumberSeven" prefHeight="53.0" prefWidth="52.0" text="7" />
+                        <Button fx:id="number7" layoutX="28.0" layoutY="74.0" mnemonicParsing="false" onAction="#clickNumberSeven" prefHeight="53.0" prefWidth="52.0" text="7" textFill="#6633ff" />
+                        <Button fx:id="number8" layoutX="101.0" layoutY="74.0" mnemonicParsing="false" onAction="#clickNumberEight" prefHeight="53.0" prefWidth="52.0" text="8" textFill="#6633ff" />
+                        <Button fx:id="number9" layoutX="174.0" layoutY="74.0" mnemonicParsing="false" onAction="#clickNumberNine" prefHeight="53.0" prefWidth="52.0" text="9" textFill="#6633ff" />
+                        <Button fx:id="number4" layoutX="28.0" layoutY="146.0" mnemonicParsing="false" onAction="#clickNumberFour" prefHeight="53.0" prefWidth="52.0" text="4" textFill="#6633ff" />
+                        <Button fx:id="number5" layoutX="101.0" layoutY="146.0" mnemonicParsing="false" onAction="#clickNumberFive" prefHeight="53.0" prefWidth="52.0" text="5" textFill="#6633ff" />
+                        <Button fx:id="number6" layoutX="174.0" layoutY="146.0" mnemonicParsing="false" onAction="#clickNumberSix" prefHeight="53.0" prefWidth="52.0" text="6" textFill="#6633ff" />
+                        <Button fx:id="number1" layoutX="28.0" layoutY="222.0" mnemonicParsing="false" onAction="#clickNumberOne" prefHeight="53.0" prefWidth="52.0" text="1" textFill="#6633ff" />
+                        <Button fx:id="number2" layoutX="101.0" layoutY="222.0" mnemonicParsing="false" onAction="#clickNumberTwo" prefHeight="53.0" prefWidth="52.0" text="2" textFill="#6633ff" />
+                        <Button fx:id="number3" layoutX="174.0" layoutY="222.0" mnemonicParsing="false" onAction="#clickNumberThree" prefHeight="53.0" prefWidth="52.0" text="3" textFill="#6633ff" />
+                        <Button fx:id="number0" layoutX="101.0" layoutY="300.0" mnemonicParsing="false" onAction="#clickNumberNull" prefHeight="53.0" prefWidth="52.0" text="0" textFill="#6633ff" />
+                        <Button fx:id="resultButton" layoutX="238.0" layoutY="393.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="84.0" text="Result" textFill="#6633ff" />
+                        <Circle fill="#d0d6dc" layoutX="280.0" layoutY="173.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                        <Button layoutX="262.0" layoutY="160.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="+" textFill="#6633ff" />
+                        <Circle fill="#d0d6dc" layoutX="281.0" layoutY="232.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                        <Button layoutX="263.0" layoutY="219.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="-" textFill="#6633ff" />
+                        <Circle fill="#d0d6dc" layoutX="281.0" layoutY="294.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                        <Button layoutX="263.0" layoutY="281.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="*" textFill="#6633ff" />
+                        <Circle fill="#d0d6dc" layoutX="280.0" layoutY="356.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                        <Button layoutX="262.0" layoutY="343.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="/" textFill="#6633ff" />
+                        <Button fx:id="dot" layoutX="174.0" layoutY="300.0" mnemonicParsing="false" onAction="#clickDot" prefHeight="53.0" prefWidth="52.0" text="." textFill="#6633ff" />
+                        <Circle fill="#d0d6dc" layoutX="280.0" layoutY="101.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                        <Button fx:id="removeButton" layoutX="262.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickRemoveButton" prefHeight="26.0" prefWidth="38.0" text="CE" textFill="#6633ff" />
                      </children></AnchorPane>
                </children></VBox>
             <Pane prefWidth="5.0" />
