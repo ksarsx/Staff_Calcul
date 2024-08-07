@@ -169,29 +169,200 @@ public class Controller {
 	}
 	
 	@FXML
-	private void onBorderTopPressed(MouseEvent event) {}
+	private void onBorderTopPressed(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				Y = event.getSceneY();
+			}
+		});
+		
+		parent.setOnMouseDragged(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				deltaY = stage.getY() - (event.getScreenY() - Y);
+					if ((getHeight(stage) + deltaY >= 600)) {
+						stage.setHeight(stage.getHeight() + deltaY);
+						stage.setY(stage.getY() - deltaY);
+						//System.out.println(newHeight + "new Height");
+				}
+			}
+		});
+	}
 	
 	@FXML 
-	private void onBorderTopRightPressed(MouseEvent event) {}
+	private void onBorderTopRightPressed(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				X = event.getSceneX() - stage.getWidth();
+				Y = event.getSceneY();
+			}
+		});
+		parent.setOnMouseDragged(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				deltaY = (stage.getY() - (event.getScreenY() - Y));
+				deltaX = -(stage.getX() - (event.getScreenX() - X) + stage.getWidth());
+				
+				if (getHeight(stage) + deltaY >= 600) {
+					stage.setHeight(stage.getHeight() + deltaY);
+					stage.setY(stage.getY() - deltaY);
+				}
+				if (getWidth(stage) + deltaX >= 360) {
+					System.out.println(deltaX);
+					stage.setWidth(stage.getWidth() + deltaX);
+				}
+			}
+		});
+	}
 	
 	@FXML 
-	private void onBorderLeftPressed(MouseEvent event) {}
+	private void onBorderLeftPressed(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				X = event.getSceneX();
+			}
+		});
+		parent.setOnMouseDragged(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				deltaX = (stage.getX() - (event.getScreenX() - X));
+				if (getWidth(stage) + deltaX >= 360) {
+					stage.setWidth(stage.getWidth() + deltaX);
+					stage.setX(stage.getX() - deltaX);
+				}
+			}
+		});
+	}
 	
 	@FXML
-	private void onBorderRightPressed(MouseEvent event) {}
+	private void onBorderRightPressed(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				X = event.getSceneX() - stage.getWidth();
+				System.out.println(X);
+			}
+		});
+		parent.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				deltaX = -(stage.getX() - (event.getScreenX() - X) + stage.getWidth());
+				if (getWidth(stage) + deltaX >= 360) {
+					System.out.println(deltaX);
+					stage.setWidth(stage.getWidth() + deltaX);
+					//stage.setX(stage.getX() - deltaX);
+				}
+			}
+		});
+	}
 	
 	@FXML
-	private void onBorderBottomLeftPressed(MouseEvent event) {}
+	private void onBorderBottomLeftPressed(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				X = event.getSceneX();
+				Y = event.getSceneY() - stage.getHeight();
+			}
+		});
+		parent.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				deltaY = -(stage.getY() - (event.getScreenY() - Y) + stage.getHeight());
+				deltaX = (stage.getX() - (event.getScreenX() - X));
+				
+				if (getHeight(stage) + deltaY >= 600) {
+					System.out.println(deltaY);
+					stage.setHeight(stage.getHeight() + deltaY);
+				}
+				if (getWidth(stage) + deltaX >= 360) {
+					System.out.println(deltaX);
+					stage.setWidth(stage.getWidth() + deltaX);
+					stage.setX(stage.getX() - deltaX);
+				}
+			}
+		});
+	}
 	
 	@FXML
-	private void onBorderBottomPressed(MouseEvent event) {}
+	private void onBorderBottomPressed(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				Y = event.getSceneY() - stage.getHeight();
+			}
+		});
+		parent.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				deltaY = -(stage.getY() - (event.getScreenY() - Y) + stage.getHeight());
+				if (getHeight(stage) + deltaY >= 600) {
+					System.out.println(deltaY);
+					stage.setHeight(stage.getHeight() + deltaY);
+				}
+			}
+		});
+	}
 	
 	@FXML
-	private void onBorderBottomRightPressed(MouseEvent event) {}
-	
-	
-	
-	
+	private void onBorderBottomRightPressed(MouseEvent event) {
+		Node source = (Node) event.getSource();
+		Parent parent = source.getParent();
+		Stage stage = (Stage) source.getScene().getWindow();
+		
+		parent.setOnMousePressed(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				X = event.getSceneX() - stage.getWidth();
+				Y = event.getSceneY() - stage.getHeight();
+			}
+		});
+		parent.setOnMouseDragged(new EventHandler<MouseEvent> () {
+			@Override
+			public void handle(MouseEvent event) {
+				deltaY = -(stage.getY() - (event.getScreenY() - Y) + stage.getHeight());
+				deltaX = -(stage.getX() - (event.getScreenX() - X) + stage.getWidth());
+				if (getHeight(stage) + deltaY >= 600) {
+					System.out.println(deltaY);
+					stage.setHeight(stage.getHeight() + deltaY);
+					stage.setY(stage.getY());
+				}
+				if (getWidth(stage) + deltaX >= 360) {
+					System.out.println(deltaX);
+					stage.setWidth(stage.getWidth() + deltaX);
+					
+					stage.setX(stage.getX());
+				}
+			}
+		});
+	}
 	
 	
 	
