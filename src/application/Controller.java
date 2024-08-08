@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -449,7 +451,95 @@ public class Controller {
 	@FXML
 	private void clickRemoveButton(ActionEvent event) {
 		String text = resultLabel.getText();
-		resultLabel.setText("");
+		resultLabel.setText("");}
+	
+	@FXML
+	private void clickOnPlusButton(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "+");
+	}
+	
+	@FXML
+	private void clickOnMinusButton(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "-");
+	}
+	
+	@FXML
+	private void clickOnDivButton(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "/");
+	}
+	
+	@FXML
+	private void clickOnMultButton(ActionEvent event) {
+		String text = resultLabel.getText();
+		resultLabel.setText(text + "*");
+	}
+	
+	@FXML
+	private void clickOnResultButton(ActionEvent event) {
+		String text = resultLabel.getText();
+		char[] arr = text.toCharArray();
+		ArrayList<String> arrayList = new ArrayList<>();
+		String symbol="";
+		for (int i = 0; i < arr.length;i++) {
+			String tekSym = String.valueOf(arr[i]);
+			if ((!tekSym.equals("+"))&&(!tekSym.equals("-"))&&(!tekSym.equals("/"))&&(!tekSym.equals("*"))) {
+				symbol = symbol+tekSym;
+			}
+			else {
+				arrayList.add(symbol);
+				symbol="";
+				arrayList.add(tekSym);
+				
+			}
+		}
+		arrayList.add(symbol);
+		int ind;
+		double n1;
+		double n2;
+		while (arrayList.size()>1) {
+			if(arrayList.contains("/")) {
+				ind = arrayList.indexOf("/");
+				n1 = Double.parseDouble(arrayList.get(ind-1));
+				n2 = Double.parseDouble(arrayList.get(ind+1));
+				arrayList.remove(ind+1);
+				arrayList.set(ind, String.valueOf(n1/n2));
+				arrayList.remove(ind-1);
+			}
+			
+			else if(arrayList.contains("*")) {
+				ind = arrayList.indexOf("*");
+				n1 = Double.parseDouble(arrayList.get(ind-1));
+				n2 = Double.parseDouble(arrayList.get(ind+1));
+				arrayList.remove(ind+1);
+				arrayList.set(ind,String.valueOf(n1*n2));
+				arrayList.remove(ind-1);
+			}
+			
+			else if (arrayList.contains("+")) {
+				ind = arrayList.indexOf("+");
+				n1 = Double.parseDouble(arrayList.get(ind-1));
+				n2 = Double.parseDouble(arrayList.get(ind+1));
+				arrayList.remove(ind+1);
+				arrayList.set(ind, String.valueOf(n1+n2));
+				arrayList.remove(ind-1);
+			}
+			
+			else if (arrayList.contains("-")) {
+				ind = arrayList.indexOf("-");
+				n1 = Double.parseDouble(arrayList.get(ind+1));
+				n2 = Double.parseDouble(arrayList.get(ind-1));
+				arrayList.remove(ind+1);
+				arrayList.set(ind, String.valueOf(n1-n2));
+				arrayList.remove(ind-1);
+			}
+			
+			String result = String.join("",arrayList);
+			
+			resultLabel.setText(result);
+		}
 	}
 	
 	

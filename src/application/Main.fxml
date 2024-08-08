@@ -69,15 +69,15 @@
                         <Button fx:id="number2" layoutX="101.0" layoutY="222.0" mnemonicParsing="false" onAction="#clickNumberTwo" prefHeight="53.0" prefWidth="52.0" text="2" textFill="#6633ff" />
                         <Button fx:id="number3" layoutX="174.0" layoutY="222.0" mnemonicParsing="false" onAction="#clickNumberThree" prefHeight="53.0" prefWidth="52.0" text="3" textFill="#6633ff" />
                         <Button fx:id="number0" layoutX="101.0" layoutY="300.0" mnemonicParsing="false" onAction="#clickNumberNull" prefHeight="53.0" prefWidth="52.0" text="0" textFill="#6633ff" />
-                        <Button fx:id="resultButton" layoutX="238.0" layoutY="393.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="84.0" text="Result" textFill="#6633ff" />
+                        <Button fx:id="resultButton" layoutX="238.0" layoutY="393.0" mnemonicParsing="false" onAction="#clickOnResultButton" prefHeight="54.0" prefWidth="84.0" text="Result" textFill="#6633ff" />
                         <Circle fill="#d0d6dc" layoutX="280.0" layoutY="173.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                        <Button layoutX="262.0" layoutY="160.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="+" textFill="#6633ff" />
+                        <Button fx:id="plusButton" layoutX="262.0" layoutY="160.0" mnemonicParsing="false" onAction="#clickOnPlusButton" prefHeight="26.0" prefWidth="38.0" text="+" textFill="#6633ff" />
                         <Circle fill="#d0d6dc" layoutX="281.0" layoutY="232.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                        <Button layoutX="263.0" layoutY="219.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="-" textFill="#6633ff" />
+                        <Button fx:id="minusButton" layoutX="263.0" layoutY="219.0" mnemonicParsing="false" onAction="#clickOnMinusButton" prefHeight="26.0" prefWidth="38.0" text="-" textFill="#6633ff" />
                         <Circle fill="#d0d6dc" layoutX="281.0" layoutY="294.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                        <Button layoutX="263.0" layoutY="281.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="*" textFill="#6633ff" />
+                        <Button fx:id="multButton" layoutX="263.0" layoutY="281.0" mnemonicParsing="false" onAction="#clickOnMultButton" prefHeight="26.0" prefWidth="38.0" text="*" textFill="#6633ff" />
                         <Circle fill="#d0d6dc" layoutX="280.0" layoutY="356.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                        <Button layoutX="262.0" layoutY="343.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="/" textFill="#6633ff" />
+                        <Button fx:id="divButton" layoutX="262.0" layoutY="343.0" mnemonicParsing="false" onAction="#clickOnDivButton" prefHeight="26.0" prefWidth="38.0" text="/" textFill="#6633ff" />
                         <Button fx:id="dot" layoutX="174.0" layoutY="300.0" mnemonicParsing="false" onAction="#clickDot" prefHeight="53.0" prefWidth="52.0" text="." textFill="#6633ff" />
                         <Circle fill="#d0d6dc" layoutX="280.0" layoutY="101.0" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
                         <Button fx:id="removeButton" layoutX="262.0" layoutY="88.0" mnemonicParsing="false" onAction="#clickRemoveButton" prefHeight="26.0" prefWidth="38.0" text="CE" textFill="#6633ff" />
